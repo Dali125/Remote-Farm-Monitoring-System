@@ -1,0 +1,66 @@
+.Section {
+    background-color: #564f4f;
+    justify-content: space-between;
+    object-fit: fill;
+}
+
+.Section p {
+    font-size: 25px;
+}
+
+.Section img {
+    height: 300px;
+}
+
+.hidden2 {
+    opacity: 0;
+    transition: all 7s;
+}
+
+.show2 {
+    opacity: 7;
+    animation: forwards;
+}
+
+.grid-images {
+    --gap: 16px;
+    --num-cols: 3;
+    --row-height: 300px;
+    box-sizing: border-box;
+    padding: var(--gap);
+    display: grid;
+    grid-template-columns: repeat(var(--num-cols), 1fr);
+    grid-auto-rows: var(--row-height);
+    gap: var(--gap);
+    --stagered-delay: 100ms;
+}
+
+@keyframes grid-images {
+    from {
+        opacity: 0;
+        transform: scale(0.3);
+        filter: hue-rotate(180deg);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+        filter: hue-rotate(0deg);
+    }
+}
+
+.grid-images img {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+    animation-delay: 100ms;
+}
+
+.grid-images-grid-col-2 {
+    grid-column: span 4;
+    width: 500px;
+    animation-delay: calc(1 * 100ms);
+}
+
+.grid-images-grid-row-2 {
+    grid-row: span 2;
+}
