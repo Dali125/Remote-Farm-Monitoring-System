@@ -1,0 +1,84 @@
+* {
+    background-color: black;
+}
+
+.section {
+    height: 85vh;
+    display: grid;
+    gap: 1rem;
+    grid-template-areas: 'a, b, c, d' ' l, r, r, e' 'k ,r, r, f' 'j, i, h,g';
+    grid-template-rows: repeat(4, 25%);
+    grid-template-columns: 240px, auto auto 240px;
+    --stagered-delay: 100ms;
+}
+
+@keyframes CardEntrance {
+    from {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1.5);
+    }
+}
+
+.grid_items:nth-child(1) {
+    grid-area: 'a';
+    animation-delay: calc(1 * var(--stagered-delay));
+}
+
+.grid_items:nth-child(2) {
+    grid-area: 'b';
+    animation-delay: calc(2 * var(--stagered-delay));
+}
+
+.grid_items:nth-child(3) {
+    grid-area: 'c';
+}
+
+.grid_items:nth-child(4) {
+    grid-area: 'd';
+}
+
+.grid_items:nth-child(5) {
+    grid-area: 'e';
+}
+
+.grid_items:nth-child(6) {
+    grid-area: 'f';
+}
+
+.grid_items:nth-child(7) {
+    grid-area: 'g';
+}
+
+.grid_items:nth-child(8) {
+    grid-area: 'h';
+}
+
+.grid_items:nth-child(9) {
+    grid-area: 'i';
+}
+
+.grid_items:nth-child(10) {
+    grid-area: 'j';
+}
+
+.grid_items:nth-child(11) {
+    grid-area: 'k';
+}
+
+.grid_items:nth-child(2) {
+    grid-area: 'l';
+}
+
+.grid_items:last-child {
+    grid-area: 'r';
+}
+
+.grid_items {
+    color: white;
+    animation: cardEntrance 700ms ease-out;
+    animation-fill-mode: backwards;
+}
